@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 
 ## 함수 선언 부분 ##
-def display() :    # Code 12-05.py에서 구현
+def display() :    
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     # 기존에 캐버스 있으면 뜯어내기.
     if canvas != None:
@@ -28,7 +28,7 @@ def display() :    # Code 12-05.py에서 구현
     paper.put(rgbString)
     canvas.pack()
 
-def func_open() :       # Code 12-05.py에서 구현
+def func_open() :       
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     filename = askopenfilename(parent=window,
                                filetypes=(("Color 파일", "*.jpg;*.png;*.bmp;*.tif;"), ("모든파일", "*.*")))
@@ -51,7 +51,7 @@ def func_open() :       # Code 12-05.py에서 구현
     outImage = inImage.copy()
     display()
 
-def func_save() :       # Code 12-06.py에서 구현
+def func_save() :       
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     saveFp = asksaveasfile(parent=window, mode='wb',
                    defaultextension='*.jpg', filetypes=(("JPG 파일", "*.jpg"), ("모든 파일", "*.*")))
@@ -68,14 +68,14 @@ def func_save() :       # Code 12-06.py에서 구현
 def func_exit() :
     exit()
 
-def func_reverse() :         # Code 12-07.py에서 구현
+def func_reverse() :        
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     outW = inW
     outH = inH
     outImage = 255 - inImage
     display()
 
-def func_bright() :         # Code 12-08.py에서 구현
+def func_bright() :         
     global window, canvas, paper, filename, inImage, outImage, inH, inW, outH, outW
     ## 중요! 코드. 출력영상 크기 결정 ##
     outH = inH
@@ -90,7 +90,7 @@ def func_bright() :         # Code 12-08.py에서 구현
     inImage = inImage.astype(np.uint8)
     display()
 
-def func_dark() :           # Code 12-08.py에서 구현
+def func_dark() :           
     global window, canvas, paper, filename, inImage, outImage, inH, inW, outH, outW
     ## 중요! 코드. 출력영상 크기 결정 ##
     outH = inH
@@ -105,7 +105,7 @@ def func_dark() :           # Code 12-08.py에서 구현
     inImage = inImage.astype(np.uint8)
     display()
 
-def func_gray() :             # Code 12-09.py에서 구현
+def func_gray() :            
     global window, canvas, paper, filename, inImage, outImage, inH, inW, outH, outW
     ## 중요! 코드. 출력영상 크기 결정 ##
     outH = inH
@@ -121,7 +121,7 @@ def func_gray() :             # Code 12-09.py에서 구현
     inImage = inImage.astype(np.uint8)
     display()
 
-def func_bw1():             # Code 12-09.py에서 구현
+def func_bw1():             
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     ## 중요! 코드. 출력영상 크기 결정 ##
     outW = inW
@@ -135,7 +135,7 @@ def func_bw1():             # Code 12-09.py에서 구현
     inImage = inImage.astype(np.uint8)
     display()
 
-def func_bw2() :             # Code 12-09.py에서 구현
+def func_bw2() :             
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     ## 중요! 코드. 출력영상 크기 결정 ##
     outW = inW
@@ -150,21 +150,21 @@ def func_bw2() :             # Code 12-09.py에서 구현
     inImage = inImage.astype(np.uint8)
     display()
 
-def func_mirror1() :       # Code 12-10.py에서 구현
+def func_mirror1() :       
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     outW = inW
     outH = inH
     outImage = np.flip(inImage,axis=1)
     display()
 
-def func_mirror2() :       # Code 12-10.py에서 구현
+def func_mirror2() :       
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     outW = inW
     outH = inH
     outImage = np.flip(inImage, axis=2)
     display()
 
-def func_rotate(times) :          # Code 12-11.py에서 구현
+def func_rotate(times) :        
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     outW = inW
     outH = inH
@@ -173,7 +173,7 @@ def func_rotate(times) :          # Code 12-11.py에서 구현
         outW, outH = outH, outW
     display()
 
-def func_zoomin() :       # Code 12-12.py에서 구현
+def func_zoomin() :       
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     scale = askinteger("확대", "배율-->", minvalue=-1, maxvalue=8)
     outW = inW * scale
@@ -185,7 +185,7 @@ def func_zoomin() :       # Code 12-12.py에서 구현
                 outImage[rgb][i][k] = inImage[rgb][int(i/scale)][int(k/scale)]
     display()
 
-def func_zoomout() :     # Code 12-12.py에서 구현
+def func_zoomout() :     
     global window, canvas, paper, filename, inImage, outImage, inW, inH, outW, outH
     scale = askinteger("축소", "배율-->", minvalue=-1, maxvalue=64)
     outW = int(inW / scale)
