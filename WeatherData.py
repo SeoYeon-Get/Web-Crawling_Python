@@ -4,7 +4,7 @@ import datetime
 import bs4
 import urllib.request
 
-csvName =  'C:/Users/ailab5/Desktop/파이썬 데이터분석_practice/파이썬 데이터분석_한빛/CSV/sokcho_weather.csv'
+csvName =  'C:/CSV/sokcho_weather.csv'
 with open(csvName, 'w', newline='') as csvFp:
     csvWriter = csv.writer(csvFp)
     csvWriter.writerow(['연월일', '시분초', '온도', '습도', '강수량', '풍향'])
