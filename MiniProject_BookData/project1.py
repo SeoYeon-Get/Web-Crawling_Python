@@ -17,7 +17,7 @@ def getBookInfo(book_tag) : #도서 데이터 추출 : 엣지 브라우저의 [�
 
 ## 전역 변수 부분
 url = "http://www.yes24.com/24/Category/More/001001003?ElemNo=104&ElemSeq=7&PageNumber="
-folderName = 'C:/Users/ailab5/Desktop/파이썬 데이터분석_practice/파이썬 데이터분석_한빛/yes24/'
+folderName = 'C:/yes24/'
 wsName = 'IT 서적 순위'
 header = ['순위', '책이름', '저자', '출판사', '출간일', '가격']
 
